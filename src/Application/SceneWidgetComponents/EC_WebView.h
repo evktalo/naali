@@ -32,18 +32,15 @@ namespace TundraLogic { class Server; }
 <table class="header"><tr><td>
 <h2>WebView</h2>
 
-A web browser of which content can be rendered into a 3D scene object. The component also support sharing your browsing with across all clients in the world.
-You can set the 'interactive' attribute boolean to true. After this clients will get a context menu when clicking mouse on the 3D object the web browser is rendered to.
-This menu will provide you to get a 2D UI of the browser and let you take control of shared browsing.
+A web browser which's content can be rendered into a 3D scene object. The component also supports sharing your browsing across all clients in the world.
+You can set the 'interactive' attribute boolean to true. After this clients will get a context menu when clicking on the 3D object the web browser is rendered to.
+This menu will provide you a 2D browsing UI and let you take control of shared browsing.
 
 <b>Shared browsing functionality:</b> Any client can request to control the shared browsing, the request will be accepted if no other client has the control at that time.
-After a client has control, their 2D browsers page changes and any scroll movement will be synchronized to all clients. This will update the 3D scene object rendering and 2D browser with your current browser state.
-In addition when a client has control of the browsing all other clients 2D browser UI scroll bars are hidden and mouse scroll events are denied. The components attributes are hidden from the entity component editor for
-everyone but the controller himself. When you want to release your control, click the 3D object again to get the menu you can from there release the control of shared browsing. Releasing control will re-enable everyones
-2D browser UIs scroll bars and mouse wheel scroll and show all the attributes in their entity component editors.
+After a client has control, the page changes in the 2D browser and any scrolling will be synchronized to all clients. This will update the 3D scene object rendering and 2D browser with your current browser state.
+In addition when a client has control of the browsing all other clients 2D browser UI scroll bars are hidden and mouse scroll events are denied. The attributes of the component are hidden from the entity component editor for everyone but the controller himself. When you want to release control, click the 3D object again to get the menu where you can release the control of shared browsing. Releasing control will re-enable everyones 2D browser UIs scroll bars and mouse wheel scrolling and show all the attributes in their entity component editors.
 
-<b>Important notes:</b> Recommended that you don't take control of shared browsing on a non headless server instance. This may in certain situation (crash or rundown of server while server has control)
-leave your components locked down so that no one can take control back. For clients leaving or crashing during control there are safe guards to never leave the control in a bad state.
+<b>Important notes:</b> It is recommended that you don't take control of shared browsing on a non headless server instance. This may in certain situation (crash or rundown of server while server has control) leave your components locked down so that no one can take the control back. For clients leaving or crashing during control there are safe guards to never leave the control in a bad state.
 
 Registered by SceneWidgetComponents plugin.
 
@@ -52,7 +49,7 @@ Registered by SceneWidgetComponents plugin.
 <li>QString: webviewUrl
 <div>Sets the url that the web browser shows.</div>
 <li>QSize: webviewSize
-<div>Sets the web browsers size. This attribute is the only way to resize the browser for the syncing feature to always show same content on all clients.</div>
+<div>Sets the web browser size. This attribute is the only way to resize the browser for the syncing feature to always show same content on all clients.</div>
 <li>int: renderSubmeshIndex
 <div>Sets the submesh index of the entitys EC_Mesh where the browser content will be rendered in the 3D scene object.</div>
 <li>int: renderRefreshRate
