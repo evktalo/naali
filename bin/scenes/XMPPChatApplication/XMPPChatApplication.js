@@ -217,6 +217,11 @@ ConversationForm.prototype.MessageReceived = function(roomJid, senderJid, messag
     if(roomJid != this.jid)
         return;
 
+    // Suppress private chat messages received if the type of the
+    // ConversationForm is room.
+    if(this.type == "room" && type == "chat")
+        return;
+
     sender = senderJid.split("/")[1];
     this.AddMessage(sender, message);
 }
