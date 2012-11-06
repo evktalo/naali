@@ -149,6 +149,7 @@ function ConversationForm(muc, dialog, layout, jid, type)
     this.muc.UserJoinedRoom.connect(this, this.UserJoined);
     this.muc.UserLeftRoom.connect(this, this.UserLeft);
     this.messageButton.clicked.connect(this, this.SendMessage);
+    this.messageEdit.returnPressed.connect(this, this.SendMessage);
 }
 
 ConversationForm.prototype.BuildDialog = function()
